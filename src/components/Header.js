@@ -11,8 +11,10 @@ import {
   FaShopware,
 } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import { useDispatch, useSelector } from "react-redux";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
+import { addUser, deleteUser } from "./redux/shoppingSlice";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -29,10 +31,25 @@ const Header = () => {
   ];
 
   const pathname = usePathname();
+  const cartItems = useSelector((state) => state.name.cart);
+  const disPatch = useDispatch();
 
   const { data: session } = useSession();
   // console.log("session", session);
 
+  useEffect(() => {
+    if (session) {
+      disPatch(
+        addUser({
+          name: session.user?.name,
+          email: session.user?.email,
+          image: session.user?.image,
+        })
+      );
+    } else {
+      disPatch(deleteUser());
+    }
+  }, [session, disPatch]);
 
   return (
     <div className="">
@@ -70,7 +87,7 @@ const Header = () => {
           <Link href={"/cart"} className="relative">
             <FaShoppingCart className="text-gray-700 hover:text-blue-600 text-xl cursor-pointer transition-colors duration-300" />
             <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
-             "0"
+              {cartItems.length > 0 ? cartItems.length : "0"}
             </span>
           </Link>
 

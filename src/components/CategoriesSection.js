@@ -20,7 +20,7 @@ const CategoriesSection = () => {
             id: 3,
             name: 'Mobile Phones',
             icon: <FaMobileAlt className="text-green-500 text-4xl" />,
-            href: "/earphone"
+            href: "/earphone"  // Updated href for consistency
         },
     ];
 
@@ -34,7 +34,7 @@ const CategoriesSection = () => {
                             <Link 
                                 href={category.href} 
                                 key={category.id} 
-                                className="p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 block"
+                                className="p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 block" // Added block class
                             >
                                 <div className="flex justify-center mb-4">
                                     {category.icon}
