@@ -1,7 +1,8 @@
-
+import localFont from "next/font/local";
 import "./globals.css";
 import LayOut from "../components/LayOut";
 import Header from "../components/Header";
+import toast, { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Ecommarce",
@@ -12,13 +13,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        
+        className={` antialiased`}
       >
         <LayOut>
           <div className="bg-white sticky top-0 z-50   shadow-md  bg-opacity-100">
             <Header />
           </div>
+
           {children}
+
+          
+          <Toaster position="top-center" reverseOrder={false} />
         </LayOut>
       </body>
     </html>
