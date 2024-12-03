@@ -102,7 +102,7 @@ const Header = () => {
                   width={30}
                   className="w-8 h-8 rounded-full"
                 />
-                {/* <p className="text-gray-700">{session.user.name}</p> */}
+                <p className="text-gray-700">{session.user.name}</p>
               </div>
               <button
                 onClick={() => signOut()}

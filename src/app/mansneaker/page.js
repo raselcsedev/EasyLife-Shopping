@@ -1,7 +1,5 @@
 import Container from "../../components/Container";
-
 import { getManSneaker } from "../../helper";
-
 import ProductsCard from "../../components/ProductsCard";
 
 const ManSneaker = async () => {

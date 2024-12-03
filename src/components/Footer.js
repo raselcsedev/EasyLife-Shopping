@@ -1,11 +1,10 @@
 import {
-  FaPaypal,
-  FaCcVisa,
-  FaCcMastercard,
   FaCcAmex,
+  FaCcMastercard,
   FaCcStripe,
+  FaCcVisa,
+  FaPaypal,
 } from "react-icons/fa";
-import Link from "next/link";
 
 const Footer = () => {
   return (

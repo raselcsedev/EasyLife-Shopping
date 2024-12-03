@@ -1,5 +1,4 @@
 import Container from "../../components/Container";
-
 import { getManBoot } from "../../helper";
 import ProductsCard from "../../components/ProductsCard";
 

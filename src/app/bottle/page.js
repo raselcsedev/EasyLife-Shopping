@@ -1,7 +1,5 @@
 import Container from "../../components/Container";
-
 import { getBottle } from "../../helper";
-
 import ProductsCard from "../../components/ProductsCard";
 
 const BottlePage = async () => {

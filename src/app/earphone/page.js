@@ -1,8 +1,7 @@
 import Container from "../../components/Container";
-
 import { getManEarPhone } from "../../helper";
-
 import ProductsCard from "../../components/ProductsCard";
+
 const EarPhoneItem = async () => {
   const ear = await getManEarPhone();
   return (
